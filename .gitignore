@@ -65,3 +65,8 @@ mono_crash.*
 /[Aa]ssets/Addressables_Temp/
 /[Aa]ssets/StreamingAssets/aa*
 /[Aa]ssets/AddressableAssetsData/*/*.bin*
+# =====================================
+# Blender 백업 파일
+# =====================================
+*.blend1
+*.blend2
