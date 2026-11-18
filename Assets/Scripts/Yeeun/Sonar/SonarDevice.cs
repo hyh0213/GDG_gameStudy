@@ -60,6 +60,7 @@ namespace Yeeun.Sonar
         /// <summary>(position, noise radius) of every pulse. Monster AI can listen to this.</summary>
         public static event Action<Vector3, float> NoiseEmitted;
 
+        public bool ReadPlayerInput { get; set; } = true;
         public bool IsOn { get; private set; }
         public int Charges { get; private set; }
         public int MaxCharges => maxCharges;
@@ -86,7 +87,7 @@ namespace Yeeun.Sonar
         void Update()
         {
             var keyboard = Keyboard.current;
-            if (keyboard != null)
+            if (ReadPlayerInput && keyboard != null)
             {
                 if (toggleKey != Key.None && keyboard[toggleKey].wasPressedThisFrame) Toggle();
                 if (pulseKey != Key.None && keyboard[pulseKey].wasPressedThisFrame) TryPulse();
